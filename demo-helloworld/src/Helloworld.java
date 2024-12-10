@@ -65,8 +65,8 @@ public class Helloworld {
     // Step 1: 3.0 -> double value, 2 -> int value
     // Step 2: double value / int value -> double value
     // Step 3: 3.0 / 2.0 -> 1.5
-    // Step 4: assign 1.5 (double value) to int double type variable (downcasting)
-    
+    // Step 4: assign 1.5 (double value) to int type variable (downcasting)
+
     // ! not allowed to assign a higher level value to a lower level type of variable
     // int -> double (upcast)
     // double -> int (downcast)
