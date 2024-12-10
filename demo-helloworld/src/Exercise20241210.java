@@ -12,7 +12,7 @@ public class Exercise20241210 {
     int englishScore = 60;
     int historyScore = 61;
 
-    double averageScore = (73.0 + 60.0 + 61.0) / 3;
+    double averageScore = (mathScore + englishScore + historyScore) / 3.0;
     System.out.println(averageScore); // 64.6666
 
   }
