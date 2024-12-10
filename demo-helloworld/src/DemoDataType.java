@@ -1,7 +1,7 @@
 public class DemoDataType {
   public static void main(String[] args) {
     // Comment. Welcome to bootcamp! 
-    // ! 1. Data Type (Primitive)
+    // ! 1. Data Type (8 Primitives)
     // int -> Integer
     // x, dayOfWeek -> variable
     int x = 3; //from right to left
@@ -14,8 +14,16 @@ public class DemoDataType {
     // variable Java naming convention
     // caml case: dayOfWeek , y2
 
+    // ! x cannot be declared twice
+    // int x = 102;
+
+    // variable declaration
+    int x100;
+    // value assignment
+    x100 = 9;
+
     // Re-assignment
-    x = 101; //re-assign 101 to x
+    x = 101; // re-assign 101 to x
     x = x + 10; // right: 101 + 10, assign 111 to x
     x = x - 40; // 111 - 40 -> 71
     x = x * 3; // 71 * 3 -> 213
@@ -83,7 +91,6 @@ public class DemoDataType {
     byte b1 = -128;
     byte b2 = 127;
   
-
     // !short -32768 to 32767
     //-32768 -> int value
     short s1 = -32768;

@@ -21,7 +21,7 @@ public class Exercise20241210 {
     //int value -> byte
     maxByte =(byte)(maxByte - 2); // Java: is it safe? not safe
     // step 1: byte value + int value -> int value
-    // can we assign int valuue to byte variable (downcasting)
+    // can we assign int value to byte variable (downcasting)
 
     System.out.println(maxByte); // 125,overflow
 
