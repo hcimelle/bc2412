@@ -67,7 +67,7 @@ public class ExerciseJavaQuest1 {
     int a = 7;
     int b = 3;
     // Fix it ...
-    int reminder = a - 2 * b;
+    int reminder = a % b;
     System.out.println("The variable reminder is " + reminder);
 
     // declare a variable x and assign value to it.
