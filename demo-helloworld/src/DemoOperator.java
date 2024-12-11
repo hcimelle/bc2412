@@ -81,18 +81,21 @@ public class DemoOperator {
     System.out.println(z10); // 35
 
     int x11 = 3;
-    int y11 = (x11++ +3) * x11++;
+    int y11 = (x11++ + 3) * x11++;
     System.out.println(y11); // 24
     System.out.println(x11); // 5
-    // step 1: 3+3
+    // step 1: 3 + 3
     // step 2: x11 become 4
     // step 3: 6 * 4
     // step 4: x11 become 5
     
-
     int x12 = 3;
-    int y12 = (x12++ +3) * ++x12;
+    int y12 = (x12++ + 3) * ++x12;
     System.out.println(y12); // 30
     System.out.println(x12); // 5
+    // step 1: 3 + 3
+    // step 2: x12 become 5
+    // step 3: 6 * 5 = 30
+    // step 4: 
   }
 }
