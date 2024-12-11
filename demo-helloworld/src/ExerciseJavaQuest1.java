@@ -74,9 +74,10 @@ public class ExerciseJavaQuest1 {
     int e = 7;
     int o = 8;
     int y = 4;
-    int x = 3;
+    int x = 2;
     // code here ... define the x and assign value to it
     // int result = e - o * x / y;
+    x = e - o * x / y;
     System.out.println("The variable result is " + x);
   }
 }
