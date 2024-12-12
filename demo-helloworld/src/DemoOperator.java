@@ -97,5 +97,11 @@ public class DemoOperator {
     // step 2: x12 become 5
     // step 3: 6 * 5 = 30
     // step 4: 
+
+    int x13 = 3;
+    int y13 = (++x13 + 3) * ++x13;
+    System.out.println(y13); // 35
+    System.out.println(x13); // 5
+    
   }
 }
