@@ -59,15 +59,70 @@ public class DemoForLoop {
 
     // sum up all odd number between 0-10
     int sum1 = 0;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i <= 10; i++) {
       if (i % 2 != 0) {
         sum1 += i;
       }
     }
     System.out.println(sum1); // 25
 
+    // sum up all even numbers between 0-10
+    // find the difference between evenSum and oddSum -> positive number
+    //int oddSum = 0; 
+    //int evenSum = 0;
+    //for (int i = 0; i < 11; i++) {
+      //if (i % 2 ==1) {
+        //oddSum += i;
+      //} else {
+        //evenSum += i;
+     //}
+    //}
+    // int diff = -1;
+    // if (oddSum > evenSum) {
+      // diff = oddSum - evenSum;
+     // } else {
+    // diff = evenSum - oddSum;
+    //}
+    //int diff = oddSum > evenSum ? oddSum - evenSum : evenSum - oddSum;
+    // System.out.println(diff); // 5
+    //}
+      //}
 
+    // Searching
+
+    String str = "abcdefijk";
+    // check if 'd' exists in the string.
+    // for loop + charAt
+
+    boolean found = false;
+    for (int i = 0; i < str.length(); i++) {
+      if (str.charAt(i) == 'd') {
+        found = true;
+        break; // break the nearest loop
+      }
+    }
+    System.out.println(found);
+    // Test case
+    // 1. "abcdefijk"
+    // 2. "abcefijk"
+    // 3. ""
+    // 4. "abcdefijkd"
+
+    // 2. check if the string value contains given substring
+    String substr = "ll";
+    String str1 = "hello";
+    // for loop + substring
+    boolean found2 = false;
+    for (int i = 0; i < str1.length() - substr.length()+ 1; i++) {
+      if (str1.substring(i, i + substr.length()).equals(substr)) {
+        found2 = true;
+        break;
+      }
+    }
+
+    System.out.println(found2); // true
 
   }
 }
+
 

@@ -25,16 +25,20 @@ public class DemoScanner {
     // for loop
     int totalHours = 0;
 
-    for (int i = 0; i < num; i++)
-    {
+    for (int i = 0; i < num; i++) {
       totalHours += 24;
     }
     System.out.println(totalHours);
 
-    // num -> number of days
+    // num -> number of minutes
     // for loop
-    // for (int i = 0; i < num ; i++);
-    // for (int j = 0; j < num ; j++);
+    int totalMinutes = 0;
+    for (int i = 0; i < num; i++) {
+      for (int j = 0; j < 24; j++) {
+        totalMinutes += 60;
+      }
+    }
+    System.out.println(totalMinutes);
 
   }
 }
