@@ -151,5 +151,53 @@ public class DemoDataType {
     int age2 = 18;
     boolean isAdult = age2 >= 18;
     System.out.println(isAdult); // true
+
+    //char
+    char q  = 'a';
+    int u = q; // !! char value can be assigned to int???
+    System.out.println(u); // 97
+    // char -> int 
+
+    char q2 = 97;
+    System.out.println(q2); //'a'
+
+    //ASCII code (0-127)
+    // a -> 97
+    // b -> 98
+    // 0 -> 48
+    // A -> 65
+    // a -> 97
+
+    // A,0
+    // 48,65,97
+
+    char q3 = 48;
+    System.out.println(q3); // 0
+    int u3 = q3;
+    System.out.println(u3); // 48
+
+    char q4 = 65;
+    System.out.println(q4); // A
+    int u4 = q4;
+    System.out.println(u4); // 65
+
+    char q5 = 10000; // int to char is not safe; 
+    System.out.println(q5);//✐
+    char q6 = '你';
+    int u6 = q6;
+    System.out.println(u6);/20320
+
+    // char q7 = 70000; //! out of range of char value
+
+    // byte -> short -> int -> long -> float -> double
+    float f11 = 97;
+    double d11 = 97;
+
+    // char -> int
+
+    long l10 = 'a';
+    float f10 = 'a';
+    double d10 = 'a'; 
+
     }
 }

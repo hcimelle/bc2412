@@ -1,4 +1,4 @@
-package exercise;
+
 // package questions;
 /**
  * Expected Output:
