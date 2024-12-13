@@ -66,34 +66,31 @@ public class DemoForLoop {
     }
     System.out.println(sum1); // 25
 
-    // sum up all even numbers between 0-10
-    // find the difference between evenSum and oddSum -> positive number
-    //int oddSum = 0; 
-    //int evenSum = 0;
-    //for (int i = 0; i < 11; i++) {
-      //if (i % 2 ==1) {
-        //oddSum += i;
-      //} else {
-        //evenSum += i;
-     //}
-    //}
+// sum up all odd numbers betwen 0 - 10
+    // sum up all even numbers betwen 0 - 10
+    // ! Find the diffenece betwen evenSum and oddSum -> positive number
+    int oddSum = 0;
+    int evenSum = 0;
+    for (int i = 0; i < 11; i++) {
+      if (i % 2 == 1) {
+        oddSum += i;
+      } else {
+        evenSum += i;
+      }
+    }
     // int diff = -1;
     // if (oddSum > evenSum) {
-      // diff = oddSum - evenSum;
-     // } else {
-    // diff = evenSum - oddSum;
-    //}
-    //int diff = oddSum > evenSum ? oddSum - evenSum : evenSum - oddSum;
-    // System.out.println(diff); // 5
-    //}
-      //}
+    //   diff = oddSum - evenSum;
+    // } else {
+    //   diff = evenSum - oddSum;
+    // }
+    int diff = oddSum > evenSum ? oddSum - evenSum : evenSum - oddSum;
+    System.out.println(diff); // 5
 
     // Searching
-
     String str = "abcdefijk";
-    // check if 'd' exists in the string.
-    // for loop + charAt
-
+    // 1. Check if 'd' exists in the string.
+    // for loop + if + charAt
     boolean found = false;
     for (int i = 0; i < str.length(); i++) {
       if (str.charAt(i) == 'd') {
@@ -102,27 +99,27 @@ public class DemoForLoop {
       }
     }
     System.out.println(found);
-    // Test case
+    // Test Case:
     // 1. "abcdefijk"
     // 2. "abcefijk"
     // 3. ""
     // 4. "abcdefijkd"
 
-    // 2. check if the string value contains given substring
-    String substr = "ll";
-    String str1 = "hello";
+    // 2. check if the string value contains given sub-string
+    String substr = "lo";
+    String str2 = "hello";
+    // hel vs loq
+    // ell vs loq
+    // llo vs loq
+
     // for loop + substring
-    boolean found2 = false;
-    for (int i = 0; i < str1.length() - substr.length()+ 1; i++) {
-      if (str1.substring(i, i + substr.length()).equals(substr)) {
-        found2 = true;
+    boolean isSubstringExist = false;
+    for (int i = 0; i < str2.length() - substr.length() + 1; i++) {
+      if (str2.substring(i, i + substr.length()).equals(substr)) {
+        isSubstringExist = true;
         break;
       }
     }
-
-    System.out.println(found2); // true
-
+    System.out.println(isSubstringExist); // true
   }
 }
-
-

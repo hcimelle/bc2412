@@ -1,3 +1,4 @@
+package exercise;
 // package questions;
 
 import java.util.Scanner;
@@ -35,7 +36,7 @@ public class ExerciseJavaQuest3 {
     // otherwise the February should have 28 days only
 
     boolean isLeapYear = false;
-    if ((month == 2) && (year % 100 !=0) && (year % 400 ==0) && (year % 4 == 0)){
+    if ((month == 2) && (year % 100 !=0) && (year % 4 ==0) || (year % 400 == 0)){
       isLeapYear = true;
   }
 
@@ -92,6 +93,9 @@ public class ExerciseJavaQuest3 {
       monthOfName = "December";
       numberOfDaysInMonth = 31;
     }
+    else if (month > 12 || month < 1) {
+      System.out.println("error");
+      }
 
     }
     
