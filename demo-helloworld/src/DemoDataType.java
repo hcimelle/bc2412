@@ -185,7 +185,7 @@ public class DemoDataType {
     System.out.println(q5);//✐
     char q6 = '你';
     int u6 = q6;
-    System.out.println(u6);/20320
+    System.out.println(u6); // 20320
 
     // char q7 = 70000; //! out of range of char value
 

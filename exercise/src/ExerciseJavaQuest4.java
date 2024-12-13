@@ -13,7 +13,7 @@ public class ExerciseJavaQuest4 {
     // 2. Divisible by 3
     // 3. > 0
 
-    int count = 0;
+    int count = 10;
     for (int i = 0; i <= 100; i++) {
       if (i % 2 == 0 && i % 3 == 0 && i > 0) {
         System.out.println(i);
