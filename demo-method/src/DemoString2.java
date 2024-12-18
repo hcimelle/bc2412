@@ -43,5 +43,9 @@ public class DemoString2 {
 
     // Chain Method
         System.out.println("hello".concat("ijk").concat("def").toUpperCase()); // HELLOIJKDEF
+
+    // charAt() -> find char by index
+    // indexOf() -> find index by char
+    
     }
 }

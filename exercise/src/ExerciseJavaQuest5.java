@@ -12,18 +12,17 @@ public class ExerciseJavaQuest5 {
     // if not found, print "Not Found."
     // code here ...
 
-    int lastIndex = 0;
+    int lastIndex = -1;
     for(int i = 0; i < str.length() ; i++){
       if(str.charAt(i) == target); {
       lastIndex = i;
-      }
-    }
-      if (lastIndex != -1){
+      
     System.out.println("The index of last character of " + target + " is " + lastIndex);
-      } else {
+     
+  } else {
         System.out.println("Not Found.");
       }
       }
   
-  }
+
 

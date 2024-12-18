@@ -42,67 +42,66 @@ public class DemoWhileLoop {
     }
     System.out.println(found);
 
-    // random
-    int number = new Random().nextInt(3); // 0-2
-    System.out.println(number);
+// Random
+int number = new Random().nextInt(3); // 0-2
+System.out.println(number);
 
-    int markSix = new Random().nextInt(49) + 1; // 0-48 +1
-    System.out.println(markSix);
+int marksix = new Random().nextInt(49) + 1; // (0-48) + 1
+System.out.println(marksix);
 
-    int marksixArr[] = new int[6];
-    int count = 0;
-    int value = new Random().nextInt(49) + 1; // 1-49
-    while (count < 6) {
-    if (!isDuplicated(marksixArr, value)){
-      marksixArr[count] = value;
-      count++;
-    }     
-    }
-    System.out.println(Arrays.toString(marksixArr));
-  
-
-// 1- 100
-// bomb : 47
-
-//! game starts:
-//please pick a number between 1-100;
-//user: 4
-//please pick a number between 5-100;
-//user: 67
-//please pick a number between 5-66
-//user: 47
-//print: bomb!
-
-//while, scanner, random
-    int min = 1;
-    int max = 100;
-    int bomb = new Random().nextInt(max) + 1; // 1-100
-    int input = -1;
-    Scanner scanner = new Scanner(System.in);
-    while (bomb != input) {
-      System.out.println("Please pick a number between " + min + "-" + max);
-      input = scanner.nextInt();
-      //min, max
-      if (input < min || input > max)
-      continue;
-      if (input < bomb) {
-        min = input + 1;
-       } else { 
-          max = input - 1;
-        }
-      }
-      scanner.close();
-    }
-
-  // check if duplicated exists
-  public static boolean isDuplicated(int[] arr, int newValue) {
-    // code here...
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] == newValue)
-        return true;
-    }
-    return false;
-
-
+int[] marksixArr = new int[6];
+int count = 0;
+int value = 0;
+while (count < 6) {
+  value = new Random().nextInt(49) + 1; // 1-49
+  if (!isDuplicated(marksixArr, value)) {
+    marksixArr[count] = value;
+    count++;
   }
+}
+System.out.println(Arrays.toString(marksixArr)); // random: [18, 39, 8, 25,
+                                                 // 28, 47]
+
+// 1 - 100
+// bomb: 47
+
+// ! Game Starts:
+// Please pick a number between 1 - 100
+// User: 4
+// Please pick a number between 5 - 100
+// User: 67
+// Please pick a number between 5 - 66
+// User: 47
+// Bomb!
+
+// While, Scanner, Random
+int min = 1;
+int max = 100;
+int bomb = new Random().nextInt(max) + 1; // 1-100
+int input = -1;
+Scanner scanner = new Scanner(System.in);
+while (bomb != input) {
+  System.out.println("Please pick a number between " + min + "-" + max);
+  input = scanner.nextInt();
+  if (input < min || input > max)
+    continue;
+  if (input < bomb) {
+    min = input + 1;
+  } else {
+    max = input - 1;
+  }
+}
+System.out.println("Bomb!");
+scanner.close();
+
+}
+
+// check if duplicated exists
+public static boolean isDuplicated(int[] arr, int newValue) {
+for (int i = 0; i < arr.length; i++) {
+  if (arr[i] == newValue)
+    return true;
+}
+return false;
+}
 }

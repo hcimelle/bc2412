@@ -1,18 +1,19 @@
 
 public class Draft {
+    /**
+     * Expected output:
+     * The index of the last character of c is 11
+     */
     public static void main(String[] args) {
-        System.out.println("First 10 numbers between 0 and 100 that are divisible by 2 and 3:");
-        
-        int count = 0; // To keep track of the number of printed numbers
-        
-        for (int i = 0; i <= 100; i++) {
-            if (i % 2 == 0 && i % 3 == 0) {
-                System.out.println(i);
-                count++;
-            }
-            if (count == 10) {
-                break; // Stop when we've printed 10 numbers
-            }
+      String str = "coding bootcamp."; // You should not change this line
+      char target = 'c'; // Update this target to test the logic
+  
+      // if not found, print "Not Found."
+      // code here ...
+  
+      System.out.println("The index of last character of " + target + " is " + str.lastIndexOf("c"));
         }
-    }
-}
+        }
+
+  
+  
