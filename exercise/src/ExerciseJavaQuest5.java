@@ -1,4 +1,4 @@
-//package questions;
+// package questions;
 
 public class ExerciseJavaQuest5 {
   /**
@@ -12,10 +12,18 @@ public class ExerciseJavaQuest5 {
     // if not found, print "Not Found."
     // code here ...
 
+    int lastIndex = 0;
     for(int i = 0; i < str.length() ; i++){
-      if(str.charAt(i) == target);
+      if(str.charAt(i) == target); {
       lastIndex = i;
+      }
     }
-
+      if (lastIndex != -1){
+    System.out.println("The index of last character of " + target + " is " + lastIndex);
+      } else {
+        System.out.println("Not Found.");
+      }
+      }
+  
   }
-}
+
