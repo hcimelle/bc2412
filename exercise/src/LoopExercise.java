@@ -1,5 +1,7 @@
 // package exercise;
 
+import java.util.Arrays;
+
 public class LoopExercise {
   public static void main(String[] args) {
     // 1. Print 6 times hello
@@ -89,108 +91,155 @@ public class LoopExercise {
         break;
       }
     }
-    if (isSubstring == true){
-    System.out.println("s8b is a substring.");
+    if (isSubstring == true) {
+      System.out.println("s8b is a substring.");
     } else {
       System.out.println("s8b is not a substring.");
     }
-  
 
 
-  // 9. Count the number of char value in the given String s9
-  // print "count=2"
-  // Use: for loop + if
-  String s9 = "pampers";
-  char c9 = 'p';
-  int count = 0;
 
-  for(
-  int i = 0;i<s9.length();i++)
-  {
-    if (s9.charAt(i) == c9) {
-      count++;
+    // 9. Count the number of char value in the given String s9
+    // print "count=2"
+    // Use: for loop + if
+    String s9 = "pampers";
+    char c9 = 'p';
+    int count = 0;
+
+    for (int i = 0; i < s9.length(); i++) {
+      if (s9.charAt(i) == c9) {
+        count++;
+      }
+    }
+    System.out.println("count=" + count);
+
+    // 10. Replace all char value 'x' in the given String array by 'k'
+    // Print arr10: ["akc", "kkk", "k", "kbk", "mkk"]
+    // Use: for loop + replace method
+    String[] arr10 = new String[] {"akc", "xxx", "x", "xbx", "mkx"};
+    for (int i = 0; i < arr10.length; i++) {
+      arr10[i] = arr10[i].replace('x', 'k');
+    }
+    System.out.println("arr10:" + Arrays.toString(arr10));
+
+
+    // 11. Count the number of Uppercase char value in the given string s11
+    // Print "count uppercase=4"
+    // Use: for loop + if
+    String s11 = "kLKloOOu";
+    int upperCaseCount = 0;
+    for (int i = 0; i < s11.length(); i++) {
+      if (Character.isUpperCase(s11.charAt(i))) {
+        upperCaseCount++;
+      }
+    }
+    System.out.println("count uppercase=" + upperCaseCount);
+
+
+    // 12. Print the following pattern of * value
+    // *****
+    // *****
+    // *****
+
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 5; j++)
+        System.out.print("*");
+      System.out.println();
+    }
+
+    // 13. Given a string value s13, each of the char value has its score.
+    // Calculate the total score
+    // Use: switch + for loop
+
+    // l -> 1 score
+    // r -> 3 score
+    // d -> 2 score
+    // u -> 4 score
+    // for other character, -1 score
+    String s13 = "lrlaudbucp";
+    int totalScore = 0;
+    for (int i = 0; i < s13.length(); i++) {
+      char currentChar = s13.charAt(i);
+    
+    switch (currentChar) {
+      case 'l':
+        totalScore += 1;
+        break;
+      case 'r':
+        totalScore += 3;
+        break;
+      case 'd':
+        totalScore += 2;
+        break;
+      case 'u':
+        totalScore += 4;
+        break;
+      default:
+        totalScore -= 1;
+        break;
     }
   }
-  System.out.println("count=" + count);
+  System.out.println("Total score = " + totalScore);
 
-  // 10. Replace all char value 'x' in the given String array by 'k'
-  // Print arr10: ["akc", "kkk", "k", "kbk", "mkk"]
-  // Use: for loop + replace method
-  String[] arr10 = new String[] {"akc", "xxx", "x", "xbx", "mkx"};
-  for (int i = 0; i < arr10.length; i++) {
-  arr10[i]=arr10[i].replace('x','k');
+
+    // 14. Assign the long values of 1, 4, 9, -4 to the given array arr14
+    long[] arr14 = new long[4];
+    arr14[0] = 1L;
+    arr14[1] = 4L;
+    arr14[2] = 9L;
+    arr14[3] = -4L;
+
+    // 15. Find the max value and min value in arr14
+    // Use One Loop + if
+    long max14 = arr14[0];
+    long min14 = arr14[0];
+    for (int i = 0; i < arr14.length ; i++) {
+      if (arr14[i]> max14) {
+        max14 = arr14[i];
+      }
+      if (arr14[i]< min14) {
+        min14 = arr14[i];
+      }
+    }
+    System.out.println("max = " + max14);
+    System.out.println("min = " + min14);
+
+
+    // 16. Declare a float value (arr16) array with value 0.2, 0.3, 0.6
+    float[] arr16 = new float[] {0.2f, 0.3f, 0.6f};
+
+    // 17. Add value 0.1 to each of value in array arr16
+    // Print: [0.3, 0.4, 0.7]
+    // HINT: USE BIG DECIMAL
+    
+
+    // 18. Count the number of target strings in the String[]
+    String[] arr18 = new String[] {"Steve", "Tommy", "Katie", "Tommy", "Lydia"};
+    String target = "Tommy";
+    // Print "count name=2"
+    int count18 = 0;
+    for (int i = 0; i < arr18.length; i++) {
+      if (arr18[i].equals(target)) {
+        count18++;
+      }
+    }
+    System.out.println("count name=" + count18);
+
+
+    // 19. swap the max digit and min digit
+    // Assumption: each digit value appear once in the String
+    // Print: "49280"
+    String s19 = "40289";
+
+    // 20. Find the longest String in the String array
+    // Print "longest=programming"
+    String[] arr20 =
+        new String[] {"python", "array", "programming", "java", "bootcamp"};
+        for (int i = 0; i < arr20.length ; i++){
+          
+        }
+
   }
-
-  System.out.print("arr10: [");
-
-  for (int i = 0; i < arr10.length; i++){
-    System.out.print(", " + arr10[i] + ", ");
-    if (i < arr10.length - 1) {
-      System.out.print(", ");
-  }
-  }
-  System.out.println("]");
-
-
-  // 11. Count the number of Uppercase char value in the given string s11
-  // Print "count uppercase=4"
-  // Use: for loop + if
-  String s11 = "kLKloOOu";
-  int upperCaseCount = 0 ;
-
-  for (int i = 0; i < s11.length() ; i++){}
-
-
-  // 12. Print the following pattern of * value
-  // *****
-  // *****
-  // *****
-
-  for (int i = 0 ; i < 3; i++){
-    for (int j = 0; j < 5; j++)
-    System.out.print("*");
-    System.out.println();
-  }
-  System.out.println();
-
-  // 13. Given a string value s13, each of the char value has its score.
-  // Calculate the total score
-  // Use: switch + for loop
-
-  // l -> 1 score
-  // r -> 3 score
-  // d -> 2 score
-  // u -> 4 score
-  // for other character, -1 score
-  String s13 = "lrlaudbucp";
-
-  // 14. Assign the long values of 1, 4, 9, -4 to the given array arr14
-  long[] arr14 = new long[4];
-
-  // 15. Find the max value and min value in arr14
-  // Use One Loop + if
-
-  // 16. Declare a float value (arr16) array with value 0.2, 0.3, 0.5
-
-  // 17. Add value 0.1 to each of value in array arr16
-  // Print: [0.3, 0.4, 0.7]
-  // HINT: USE BIG DECIMAL
-
-  // 18. Count the number of target strings in the String[]
-  String[] arr18 = new String[] {"Steve", "Tommy", "Katie", "Tommy", "Lydia"};
-  String target = "Tommy";
-  // Print "count name=2"
-
-  // 19. swap the max digit and min digit
-  // Assumption: each digit value appear once in the String
-  // Print: "49280"
-  String s19 = "40289";
-
-  // 20. Find the longest String in the String array
-  // Print "longest=programming"
-  String[] arr20 =
-      new String[] {"python", "array", "programming", "java", "bootcamp"};
-
-}}
+}
 
 
