@@ -211,6 +211,8 @@ public class LoopExercise {
     // 17. Add value 0.1 to each of value in array arr16
     // Print: [0.3, 0.4, 0.7]
     // HINT: USE BIG DECIMAL
+
+    
     
 
     // 18. Count the number of target strings in the String[]
@@ -235,9 +237,14 @@ public class LoopExercise {
     // Print "longest=programming"
     String[] arr20 =
         new String[] {"python", "array", "programming", "java", "bootcamp"};
-        for (int i = 0; i < arr20.length ; i++){
-          
+        String longest = " ";
+        for (int i = 0; i < arr20.length; i++){
+          if (arr20[i].length() > longest.length()){
+            longest = arr20[i];
+          }
+          System.out.println("longest=" + arr20[i]);
         }
+        
 
   }
 }

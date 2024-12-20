@@ -235,32 +235,31 @@ public class DemoArray {
     // Assumption: each digit value appear once in the String
     // Print: "49280"
     String s19 = "40289";
-    char[] arr19 = new char[s.length()];
+    char[] arr19 = new char[s19.length()];
     for (int i = 0; i < s19.length(); i++) {
-    arr19 [i] = s19.charAt(i);
+      arr19[i] = s19.charAt(i);
     }
-
-    // [ '4', '0', '2', '8', '9']
+    // ['4', '0', '2', '8', '9']
     int minIndex = -1;
     int maxIndex = -1;
     int min19 = Integer.MAX_VALUE;
     int max19 = Integer.MIN_VALUE;
-    for (int i = 0; i < arr.length; i++) {
-    if (arr19[i] > max19) {
+    for (int i = 0; i < arr19.length; i++) {
+      if (arr19[i] > max19) {
         max19 = arr19[i];
-        maxIndex = i;}
-    
-    if (arr19[i] < min19){
+        maxIndex = i;
+      }
+      if (arr19[i] < min19) {
         min19 = arr19[i];
         minIndex = i;
+      }
     }
-}
-    //swap
+    // swap
     char temp19 = ' ';
     temp19 = arr19[maxIndex];
     arr19[maxIndex] = arr19[minIndex];
     arr19[minIndex] = temp19;
-    System.out.println();
+    System.out.println(String.valueOf(arr19));
 }
 
     }

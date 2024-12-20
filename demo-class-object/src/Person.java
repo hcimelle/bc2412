@@ -5,13 +5,15 @@ public class Person { //blueprint - define a Person
   private String email;
 
   // constructor (not a method)
+  // constructor is to create object
   public Person(String name, int age, String email){
     this.name = name;
     this.age = age;
     this.email = email;
   }
 
-  // getter (instance Method)
+  // getter (instance = object)
+  // instance Method is able to return self value
 public String getName(){
   return this.name;
 }
@@ -23,6 +25,19 @@ public int getAge(){
 public String getEmail(){
   return this.email;
 }
+// setter
+// void -> return nothing
+
+public void setName(String name){
+  this.name = name;
+}
+public void setAge(int age){
+  this.age = age;
+}
+public void setEmail(String email){
+  this.email = email;
+}
+
 
     public static void main (String[] args) {
     int x = 3;
@@ -47,6 +62,19 @@ public String getEmail(){
     System.out.println(p2.getName()); // lucas
     System.out.println(p2.getAge()); // 17
     System.out.println(p2.getEmail()); // l@email.com
+
+    Person p3 = p2;
+    System.out.println(p3.getName()); // lucas
+    System.out.println(p3.getAge()); // 17
+    System.out.println(p3.getEmail()); // l@email.com
+
+    p2.setAge(30);
+    System.out.println(p2.getAge()); //
+    System.out.println(p3.getAge()); //
+
+    p2.setName("Peter");
+    System.out.println(p2.getName()); //
+    System.out.println(p3.getName()); //
 
     Person[] persons = new Person[] {p1, p2, new Person("dicky", 19, "d@email.com")};
     for (Person p : persons) {
