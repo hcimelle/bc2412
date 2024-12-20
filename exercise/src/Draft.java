@@ -12,7 +12,28 @@ public class Draft {
       // code here ...
   
       System.out.println("The index of last character of " + target + " is " + str.lastIndexOf("c"));
+       
+    
+      String s8a = "abcba";
+      String s8b = "cba";
+      boolean isSubstring = false ; {
+    
+      for(int i = 0; i < s8a.length()-s8b.length() + 1; i++) {
+        if (s8a.substring(i, i + s8b.length()).equals(s8b)) {
+          isSubstring = true;
+          break;
         }
+      }
+      System.out.println(isSubstring);
+    
+    
+      }
+    
+    
+    }
+
+
+
         }
 
   

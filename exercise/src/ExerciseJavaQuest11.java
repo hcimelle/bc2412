@@ -19,5 +19,14 @@ public class ExerciseJavaQuest11 {
 
   public static int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
     // code here ...
+    if (arrivalTime + delayedTime < 24){
+      System.out.println(arrivalTime + delayedTime);
+    } else { 
+      System.out.println(arrivalTime + delayedTime - 24);
+    }
+    return arrivalTime + delayedTime;
+    
+    }
+
   }
-}
+  

@@ -28,6 +28,11 @@ public class ExerciseJavaQuest10 {
 
     // code here ...
 
+    int[] newArr = new int[my_array.length + 1];
+    for (int i = 0; i < newArr.length; i++){
+      
+
+    }
     // my_array = newArr;
     System.out.println("New Array: " + Arrays.toString(newArr));
   }

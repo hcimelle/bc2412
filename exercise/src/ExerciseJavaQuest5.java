@@ -19,7 +19,7 @@ public class ExerciseJavaQuest5 {
       
     System.out.println("The index of last character of " + target + " is " + lastIndex);
      
-  } else {
+  } else if {
         System.out.println("Not Found.");
       }
       }

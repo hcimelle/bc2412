@@ -209,7 +209,27 @@ public class DemoArray {
         }
         System.out.println(maxNumChar); // p
 
+        //
+        int[] arr20 = new int[] {20, -20, 90, 50, -40};
+        // Sorting, without create a new array
+        // !move the max value to tail
+        // step 1: [x,x,x,x,90] when i = 0
+        // step 2: [x,x,x,50,90] when i = 1
+        // step 3: [x,x,20,50,90] when i = 2
+        // step 4 [x,-20,20,50,90] when i = 3
 
+        for (int i = 0; i < arr20.length - 1; i++) {// 0,1,2,3
+            for (int j = 0; j < arr20.length - i - 1; j++) { // i = 3; j = 0
+                if (arr20[j] > arr20[j + 1]) {
+                    temp = arr20[j];
+                    arr20[j] = arr20[j + 1];
+                    arr20[j + 1] = temp;
+
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(arr20));// [-40,-20,20,50,90]
     }
 }
 
