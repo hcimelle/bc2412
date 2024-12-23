@@ -2,13 +2,13 @@ public class Product {
   // attributes
   private String name;
   private int price;
-  private String code;
+  private String productCode;
 
   // constructor
-  public Product(String name, int price, String code) {
+  public Product(String name, int price, String productCode) {
     this.name = name;
     this.price = price;
-    this.code = code;
+    this.productCode = productCode;
   }
 
   // getter
@@ -18,8 +18,8 @@ public class Product {
   public int getPrice(){
     return this.price;
   }
-  public String getCode(){
-    return this.code;
+  public String getProductcode(){
+    return this.productCode;
   }
 
   public static void main (String[] args) {
@@ -30,7 +30,7 @@ public class Product {
 
     Product[] products = new Product[] {p1, p2, p3};
     for (Product p : products){
-      System.out.println(p.getName() + ", "  + p.getPrice() + ", " + p.getCode());
+      System.out.println(p.getName() + ", "  + p.getPrice() + ", " + p.getProductcode());
 
     }
 
