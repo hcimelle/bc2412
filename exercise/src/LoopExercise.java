@@ -1,5 +1,6 @@
 // package exercise;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class LoopExercise {
@@ -211,6 +212,7 @@ public class LoopExercise {
     // 17. Add value 0.1 to each of value in array arr16
     // Print: [0.3, 0.4, 0.7]
     // HINT: USE BIG DECIMAL
+    BigDecimal[] arr17 = new BigDecimal[arr16.length] ;
 
     
     

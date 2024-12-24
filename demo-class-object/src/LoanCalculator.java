@@ -32,8 +32,8 @@ public class LoanCalculator {
   }
 
   public static void main(String[] args) {
-    LoanCalculator l1 = new LoanCalculator(10000, 2.0, 2);
+    LoanCalculator l1 = new LoanCalculator(10000, 2.0, 2); // 404
     System.out.println(l1.totalInterestAfterYears());
-    System.out.println(totalInterestAfterYears2(10000, 2.0, 2));
+    System.out.println(totalInterestAfterYears2(10000, 2.0, 2));//404
   }
 }
