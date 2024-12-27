@@ -34,7 +34,6 @@ public void setPrice(double price){
 }
 public void setQuantity(int quantity){
   this.quantity = quantity; // may need IRL
-
 }
 
 public double totalAmount(){
