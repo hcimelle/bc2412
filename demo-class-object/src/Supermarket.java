@@ -33,6 +33,7 @@ public static void main (String[] arg){
     worker2.moveOut(4);
     System.out.println(Worker.getWorkerCount()); //2
 
+
   }
 }
 
