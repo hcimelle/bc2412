@@ -26,3 +26,16 @@
   - method name
   - method signature = input params + method name
 - BigDecimal for math calculation
+
+## Week 3
+
+- Class and Object
+Example: Customer/ Order/ Item
+Example: Person
+Example: Human (bmi)
+
+- Static variable
+Example: Supermarket & Worker , Supermarket2 & Worker2
+
+- Static method
+Example: Circle, LoanCalculator

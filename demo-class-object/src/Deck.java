@@ -2,12 +2,11 @@ public class Deck {
 
   private Card[] cards;// 52 cards
 
-  public Deck (){
-
-    this.cards= new Card[Card.SUITES.length * RANKS.length]; // 13 x4
+  public Deck() {
+    this.cards = new Card[Card.SUITES.length * Card.RANKS.length]; // 13 * 4
     int idx = 0;
-    for (char rank : Card.RANKS){
-      for (char suite : Card.SUITES){
+    for (char rank : Card.RANKS) {
+      for (char suite : Card.SUITES) {
         this.cards[idx++] = new Card(rank, suite);
       }
     }
