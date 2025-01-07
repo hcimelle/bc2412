@@ -1,6 +1,6 @@
 public class Student {
   private int score;
-  private Student[] students;
+  private char student;
 
   // Expected output:
   // 20 candies -> distribute to students according to their score until finish
@@ -22,18 +22,23 @@ public class Student {
 
   // tips: consider static, for loop (while loop?)
 
-  public Student(int score, Student[] student) {
+  public Student(int score, char student) {
     this.score = score;
-    this.students = new Student[6];
+    this.student = student;
   }
 
-    public Student[] getStudents(){
-      return this.students;
+    public char getStudent(){
+      return this.student;
     }
     
+public static void main (String[] args){
+Student[] students
 
     int numOfC = 0;
     int totalC = 20;
+
+
+
     for (int i = 0; i <= 6; i++) {
       if (score >= 80) {
         numOfC += 2;
@@ -44,12 +49,12 @@ public class Student {
       }
     }
 
-      System.out.println("Student 1 has " + numOfC + "candies");
-      System.out.println("Student 2 has " + numOfC + "candies");
-      System.out.println("Student 3 has " + numOfC + "candies");
-      System.out.println("Student 4 has " + numOfC + "candies");
-      System.out.println("Student 5 has " + numOfC + "candies");
-      System.out.println("Student 6 has " + numOfC + "candies");
+      System.out.println("Student 1 has " +  + "candies");
+      System.out.println("Student 2 has " +  + "candies");
+      System.out.println("Student 3 has " +  + "candies");
+      System.out.println("Student 4 has " +  + "candies");
+      System.out.println("Student 5 has " +  + "candies");
+      System.out.println("Student 6 has " +  + "candies");
     }
   
 
