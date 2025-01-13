@@ -1,4 +1,4 @@
-public class Cat extends Animal implements KeepAlive{
+public class Cat extends Animal{
   private String color;
 
   public Cat (String name, int age, double weight, String color){
@@ -22,6 +22,10 @@ public class Cat extends Animal implements KeepAlive{
 
   public void sleep(){
 
+  }
+
+  public void setName(String name){
+    super.setName(name);
   }
 
   public static void main(String[] args) {

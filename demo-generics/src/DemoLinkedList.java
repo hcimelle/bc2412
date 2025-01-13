@@ -54,7 +54,7 @@ public class DemoLinkedList {
     animals.add(cat1);
     animals.add(dog1);
     System.out.println(animals);
-    for (Animal animal :animals)
+    for (Animal animal :animals){}
 
   }
 }
