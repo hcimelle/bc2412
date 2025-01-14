@@ -7,6 +7,6 @@ public class SortByAge implements Comparator<DemoPQ.Person> {
 
   if (p1.getAge() > p2.getAge())
   return -1;
-  return 1;
+  return 1; //base return
 }
 }
