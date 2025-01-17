@@ -20,8 +20,8 @@ public class ExceptionExercise1 {
       int x = numerator / denominator;
       System.out.println("Result = " + x );
     } catch (ArithmeticException e) {
-      System.out.println("Cannot divided by zero.");
-    }
+      System.out.println("Error: Cannot divide by zero.");
+    } finally {
   System.out.println("Division operation completed.");
   }
 
@@ -33,4 +33,5 @@ public class ExceptionExercise1 {
   // }
   // System.out.println("Division operation completed.");
 
+}
 }

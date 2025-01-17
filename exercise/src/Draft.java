@@ -29,7 +29,12 @@ public class Draft {
     
       }
     
-    
+      int counter = 10;
+
+      for (byte i=0; i<128; i--){
+        counter++;
+      }
+    System.out.println(counter);
     }
 
 

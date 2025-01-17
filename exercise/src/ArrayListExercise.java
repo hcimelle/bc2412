@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Hashtable;
 
 public class ArrayListExercise {
   public static void main(String[] args) {
@@ -97,10 +98,8 @@ public class ArrayListExercise {
     double5.add(5.5);
     System.out.println(double5.contains(3.3)); //true
     double5.remove(2.2);
-    System.out.println(double5);
+    System.out.println(double5.size());
    
-
-
     // Exercise 6: Intersection of Sets
 
     // 6a. Create two HashSets:
@@ -109,11 +108,49 @@ public class ArrayListExercise {
     // 6d. Find the common numbers of the two sets.
     // 6e. Print the resulting set.
 
+    HashSet<Integer> integers61 = new HashSet<>();
+    integers61.add(10);
+    integers61.add(20);
+    integers61.add(30);
+    integers61.add(40);
+    System.out.println(integers61);
+
+    HashSet<Integer> integers62 = new HashSet<>();
+    integers62.add(30);
+    integers62.add(40);
+    integers62.add(50);
+    integers62.add(60);
+    System.out.println(integers62);
+
+    HashSet<Integer> commonNumbers = new HashSet<>();
+    for (Integer integer: integers61){
+            if (integers62.contains(integer)) {
+        commonNumbers.add(integer);
+      }
+    }
+    System.out.println("Common Numbers = " + commonNumbers);
+
+
+
     // Exercise 7: Convert HashSet to ArrayList
 
     // 7a. Create a HashSet with the following String: "Cherry", "Steve", "Chole", "Jenny", "Vicky".
     // 7b. Convert the HashSet to an ArrayList.
     // 7c. Print the converted list.
+
+    HashSet<String> hashSet7 = new HashSet<>();
+    hashSet7.add("Cherry");
+    hashSet7.add("Steve");
+    hashSet7.add("Chloe");
+    hashSet7.add("Jenny");
+    hashSet7.add("Vicky");
+
+    System.out.println(hashSet7);
+
+    ArrayList<String> arrayList7 = new ArrayList<>(hashSet7);
+    System.out.println(arrayList7);
+    
+
 
     // Exercise 8: ArrayList of Students
     // 8a. Create an ArrayList to store Student objects.
@@ -128,6 +165,13 @@ public class ArrayListExercise {
     // return "Student not found".
     // 8e. Create another ArrayList to store student with name starts with 'A'
 
+    ArrayList<String> arrayList8 = new ArrayList<>();
+    arrayList8.add(new Student(1, "Alice"));
+    arrayList8.add(new Student(2, "Bob"));
+    arrayList8.add(new Student(3, "Charlie"));
+    System.out.println(arrayList8);
+
+
     // Exercise 9: HashSet of Students
     // 9a. Create two HashSets of Student objects:
     // Set 1: Alice (ID: 1), Bob (ID: 2), Charlie (ID: 3)
@@ -140,6 +184,19 @@ public class ArrayListExercise {
   public static class Student {
     private int id;
     private String name;
+
+  public Student (int id, String name){
+    this.id = id;
+    this.name = name;
+  }
+
+  public int getId (){
+    return this.id;
+  }
+
+  public String getName(){
+    return this.name;
+  }
 
     // Constructor
     // getter, setter, etc.
