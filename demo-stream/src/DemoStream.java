@@ -1,9 +1,12 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DemoStream {
     public static void main(String[] args) {
@@ -76,9 +79,8 @@ public class DemoStream {
 
         // convert 3 book names to 3 books
         List<String> bookNames2 = List.of("abc", "herry", "def");
-        List<Book> newBook2 = bookNames2.stream()
-        .map(e -> new Book(e))
-        .collect(Collectors.toList());
+        List<Book> newBook2 = bookNames2.stream().map(e -> new Book(e))
+                .collect(Collectors.toList());
 
         System.out.println(newBook2);
 
@@ -88,30 +90,128 @@ public class DemoStream {
 
         // Integer[] vs int[], int vs Integer
         Integer[] arr2 = new Integer[] {2, 4, -1, 1, -3};
-        Arrays.sort(arr2,(i1, i2) -> i1 > i2 ? -1 : 1);// lambda expression of comparator
-        System.out.println(Arrays.toString(arr2)); //[4, 2, 1, -1, -3]
+        Arrays.sort(arr2, (i1, i2) -> i1 > i2 ? -1 : 1);// lambda expression of comparator
+        System.out.println(Arrays.toString(arr2)); // [4, 2, 1, -1, -3]
 
-        //Integer[] -> Stream<Integer>
+        // Integer[] -> Stream<Integer>
         List<Integer> sortedIntegers = Arrays.stream(arr2)//
-        .sorted((i1, i2) -> i1 > i2 ? -1 : 1)//
-        .collect(Collectors.toList());
+                .sorted((i1, i2) -> i1 > i2 ? -1 : 1)//
+                .collect(Collectors.toList());
         System.out.println(sortedIntegers);
 
         // Fruit
-        List<String> fruits = Arrays.asList("orange", "apple", "orange", "lemon");
+        List<String> fruits =
+                Arrays.asList("orange", "apple", "orange", "lemon");
         Set<String> newFruits = fruits.stream().collect(Collectors.toSet());
         System.out.println(newFruits);
 
         // distinct() -> remove duplicates
-        List<String> newFruits2 = fruits.stream().distinct().collect(Collectors.toList());
+        // What if List<Book> by distinct()
+        List<String> newFruits2 =
+                fruits.stream().distinct().collect(Collectors.toList());
         System.out.println(newFruits2);
+
+
+        // Stream.class
+        Stream.of("abc", "def");
+        Stream<Book> books2 = Stream.of(new Book("abc"), new Book("def"));
+
+        List<Book> books3 = books2.filter(e -> e.getName().contains("a"))
+        .collect(Collectors.toList());
+
+        LocalDate date1 = LocalDate.of(2014, 10, 31);
+        String str = String.valueOf(123);
+
+        Stream<String> ss = Stream.empty();
+        System.out.println(ss.count()); // 0
+
+        Optional<Book> targetBookBox =
+                Stream.of(new Book("abc"), new Book("def"))
+                        .filter(e -> "abc".equals(e.getName())).findFirst(); // find the first one
+
+        // Optional (Java 8)
+        // 1. targetBook never be null
+        // 2. targetBook is an Optional Object, so it can Optional method only
+        // 3. you have to check the content of optional object before using it
+        // 4. isPresent() & ifPresent() are the ways to resolve Optional in safe mode
+        // 5. never to resolve the Optional object by get() only (unsafe)
+        int x = 10;
+        if (targetBookBox.isPresent())
+            ; // something like peek
+        Book targetBook = targetBookBox.get();
+        System.out.println(targetBook.getName()); // abc
+        System.out.println(x); // 10
+
+        // similar to for-each
+        targetBookBox.ifPresent(e -> {
+            System.out.println(e.getName());
+            System.out.println(x); // 10
+        });
+
+        // stream for-each
+        String name = "oscar";
+        Stream.of(100, 120, 300).forEach(e -> {
+            System.out.println(e);
+            System.out.println(name); // read the name
+            // but cannot write the name variable
+            // name = "abc";
+        });
+
+        String name2 = "ok";
+        for (Integer integer : Stream.of(100,120,300).collect(Collectors.toList())){
+            System.out.println(integer);
+            name2 = "ijk";
+        }
+        // Some other way to resolve the Optional (safe)
+        Book targetBook2 = targetBookBox
+        .orElse(new Book("default"));
+        Book targetBook3 = targetBookBox
+        .orElseThrow(() -> new RuntimeException("Book is not found."));
+
+        Book targetBook4 = targetBookBox.orElseGet(()-> new Book("default")); // similar to orElse
+
+        // of(), ofNullable()
+        String name3= "ABC";
+        Optional<String> os1 = Optional.of(name3);
+        String name4= null;
+        Optional<String> os2 = Optional.ofNullable(name4);
+
+        Optional<String> os3 = Optional.empty();
+        if (os3.isPresent()) {
+            System.out.println(os3.get());
+        } else {
+            System.out.println("The String is Null.");
+        }
+
+        Stream<Integer> integersLargerthan10 = Stream.of(10, 100, -1)
+        .filter(e -> e > 10);
+        System.out.println(integersLargerthan10.count()); // 1
+
+        // System.out.println(integersLargerthan10.count()); 
+        // Runtime Exception : stream has already been operated upon or cloased
+
+        // Intermediate operations : filter , map, distinct, 
+        // Terminal operations : collect(), count(), max(), min()
+
+        Stream<Integer> plusOne = Stream.of(1,2,3)//
+        .map(i-> {
+            System.out.println(i);
+            return i + 1;
+        });
+        //List<Integer> plusOneList = plusOne.collect(Collectors.toList()); // 2,3,4
+
+        long count =  plusOne.count(); // 3
+        // because Java thinks map() doesn't change the result of count()
+        // so it won't execute map() when the terminal operation is count()
+        System.out.println(count); // 3
+
     }
 
     // Convert from List of Object A (more fields) to List of Object B (less fields)
-    public static List<Book> getBookListForSearch(List<Book2> books){
+    public static List<Book> getBookListForSearch(List<Book2> books) {
         return books.stream()//
-        .map(e -> new Book(e.getName()))//
-        .collect(Collectors.toList());
+                .map(e -> new Book(e.getName()))//
+                .collect(Collectors.toList());
     }
 
     public static class Book2 {
@@ -127,14 +227,14 @@ public class DemoStream {
             return this.name;
         }
 
-        public double getPrice(){
+        public double getPrice() {
             return this.price;
         }
 
         @Override
         public String toString() {
-            return "Book[ " + "name = " + this.name + 
-            "price = " + this.price + "]";
+            return "Book[ " + "name = " + this.name + "price = " + this.price
+                    + "]";
 
         }
     }
@@ -155,8 +255,5 @@ public class DemoStream {
             return "Book[ " + "name = " + this.name + "]";
 
         }
-
-
-
     }
 }

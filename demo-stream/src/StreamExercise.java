@@ -24,11 +24,77 @@ public class StreamExercise {
     public int getScore() {
       return this.score;
     }
-
-    public void setScore () { 
-      this.score= score;
   }
-}
+
+  public static class Employee {
+    private String name;
+    private int salary;
+
+    public Employee(String name, int salary) {
+      this.name = name;
+      this.salary = salary;
+    }
+
+    public String getName8() {
+      return this.name;
+    }
+
+    public int getSalary() {
+      return this.salary;
+    }
+  }
+
+  public static class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age){
+      this.name = name;
+      this.age = age;
+    }
+
+    public String getName9(){
+      return this.name;
+    }
+    public int getAge(){
+      return this.age;
+    }
+
+    @Override
+    public String toString(){
+      return this.name;
+    }
+  }
+
+  public static enum Gender{
+    MALE(true),
+    FEMALE(false),;
+
+    private final boolean gender;
+
+    private Gender(boolean gender){
+    this.gender = gender;
+  }
+
+  public static class Staff{
+    private String name;
+    private Gender gender;
+
+    public Staff (String name, Gender gender){
+      this.name = name;
+      this.gender = gender;
+    }
+
+    public String getName10(){
+      return this.name;
+    }
+
+    public Gender getGender(){
+      return this.gender;
+    }
+
+  }
+
 
   public static void main(String[] args) {
     // 1. Basic Stream Operations
@@ -65,15 +131,15 @@ public class StreamExercise {
     // Output: Min: 5
 
     // Optional<Integer> findMax =
-    //     numbers2.stream().max((e1, e2) -> e1 < e2 ? -1 : 1);
+    // numbers2.stream().max((e1, e2) -> e1 < e2 ? -1 : 1);
     // int maxNum = Integer.MIN_VALUE;
     // if (findMax.isPresent()) {
-    //   findMax.get();
+    // findMax.get();
     // }
     // System.out.println("Max:" + findMax);
 
     // Integer findMin =
-    //     numbers2.stream().min((e1, e2) -> e1 > e2 ? -1 : 1).orElse(-1);
+    // numbers2.stream().min((e1, e2) -> e1 > e2 ? -1 : 1).orElse(-1);
     // // orElse() to open the "box"
     // System.out.println("Min:" + findMin);
 
@@ -126,12 +192,15 @@ public class StreamExercise {
 
     // Output: {Alice=85, Bob=75}
 
-    List<Student> students = List.of(new Student("Alice", 85), new Student("Bob", 75));
+    List<Student> students =
+        List.of(new Student("Alice", 85), new Student("Bob", 75));
     // students.set(0, new Student("Vincent", 90)); java.lang.UnsupportedOperationException
-    //students.get(0).setScore(80); // OK
+    // students.get(0).setScore(80); // OK
 
-    Map<String, Integer> studentMap = students.stream()
-    .collect(Collectors.toMap(stu -> stu.getName()), stu.getScore());
+    Map<String, Integer> studentMap = students.stream()//
+        .collect(Collectors.toMap(stu -> stu.getName(), stu -> stu.getScore()));
+
+    System.out.println(studentMap);
 
 
     // 8. Filtering and Mapping to a List of Objects
@@ -145,6 +214,15 @@ public class StreamExercise {
 
     // Output: [John, Jane]
 
+    List<Employee> employees = List.of(new Employee("John", 65000),
+        new Employee("Jane", 55000), new Employee("Doe", 40000));
+
+    Map<String, Integer> employeeMap = employees.stream()//
+    .filter(e -> e.getSalary() > 50000)//
+    .collect(Collectors.toMap(emp -> emp.getName8(), emp -> emp.getSalary()));
+
+    System.out.println(employeeMap);
+
     // 9. Grouping and Collecting to a Map (Group by Age)
     // Task: Given a list of people with their names and ages, group them by age and collect the result
     // into a Map<Integer, List<String>> where the key is the age and the value is a list of names.
@@ -153,6 +231,13 @@ public class StreamExercise {
     // new Person("Alice", 30),
     // new Person("Bob", 25),
     // new Person("Charlie", 30)
+    List<Person> persons = List.of(new Person("Alice", 30), 
+    new Person("Bob", 25), new Person("Charlie", 30));
+
+    Map<Integer, List<Person>> byAge = persons.stream()//
+    .collect(Collectors.groupingBy(e -> e.getAge()));
+
+    System.out.println(byAge);
 
     // // Output: {30=[Alice, Charlie], 25=[Bob]} (Map)
 
@@ -164,6 +249,14 @@ public class StreamExercise {
     // new Staff("Alice", Gender.Female)
     // new Staff("Bob", Gender.Male)
     // new Staff("Charlie", Gender.Male)
+    List<Staff> staffs = List.of(new Staff("Alice", Gender.FEMALE),
+    new Staff("Bob", Gender.MALE), new Staff("Charlie", Gender.MALE));
+
+    Map<Boolean, List<Staff>> byGender = staffs.stream()//
+    .collect(Collectors.partitioningBy(e -> e.getGender()));
+
+    System.out.println(byGender);
+
 
     // // Output: {false=[Alice], true=[Bob, Charlie]} (Map)
 
@@ -306,8 +399,11 @@ public class StreamExercise {
     List<String> keywords =
         Arrays.asList("stream", "filter", "map", "sorted", "collect");
     // Output: 28
+
+
   }
 
 
 }
+
 

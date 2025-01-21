@@ -8,13 +8,12 @@ public class Node {
 
   public Node (int value){
     this.value = value;
-
   }
 
   public Node (Node node){
     this.node = node;
   }
-
+  
   public Node (Node node, int value){
     this.node = node;
     this.value = value;
