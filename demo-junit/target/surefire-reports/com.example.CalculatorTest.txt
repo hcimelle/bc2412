@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.CalculatorTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.example.CalculatorTest
+testSum2  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-5> but was: <-4>
+	at com.example.CalculatorTest.testSum2(CalculatorTest.java:35)
+
